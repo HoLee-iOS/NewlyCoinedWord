@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var newLanguage = ["윰차":"유모차의 준말", "실매":"실질적 매니저의 준말", "만반잘부":"만나서 반가워 잘부탁해", "꾸안꾸":"꾸민듯 안꾸민듯"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,21 +83,12 @@ class ViewController: UIViewController {
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         
-        if userTextField.text == "삼귀자"{
-            labelName(description: "연애를 시작하기 전 썸 단계!")
-        }else {
-            labelName(description: "데이터가 없습니다😅")
-        }
         
     }
     
     @IBAction func returnKeyClicked(_ sender: UITextField) {
         
-        if userTextField.text == "삼귀자"{
-            labelName(description: "연애를 시작하기 전 썸 단계!")
-        }else {
-            labelName(description: "데이터가 없습니다😅")
-        }
+        
         
     }
     
