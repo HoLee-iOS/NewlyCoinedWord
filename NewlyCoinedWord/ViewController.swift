@@ -7,6 +7,25 @@
 
 import UIKit
 
+
+enum NewList: String {
+    case 윰차
+    case 실매
+    case 만반잘부
+    case 꾸안꾸
+    case 삼귀자
+    
+    var description: String {
+        switch self {
+        case .윰차: return "유모차"
+        case .실매: return "실질적 매니저"
+        case .만반잘부: return "만나서 반가워 잘부탁해"
+        case .꾸안꾸: return "꾸민듯 안꾸민듯"
+        case .삼귀자: return "사귀기의 전 단계"
+        }
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var hashTagButton1: UIButton!
@@ -21,7 +40,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var newLanguage = ["윰차":"유모차의 준말", "실매":"실질적 매니저의 준말", "만반잘부":"만나서 반가워 잘부탁해", "꾸안꾸":"꾸민듯 안꾸민듯"]
+    var newText1: NewList = .윰차
+    var newText2: NewList = .실매
+    var newText3: NewList = .만반잘부
+    var newText4: NewList = .꾸안꾸
+    var newText5: NewList = .삼귀자
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +60,8 @@ class ViewController: UIViewController {
         userTextField.layer.borderWidth = 3
         
     }
-
+    
+    
     func setButton(buttonName: UIButton, buttonTitle: String) {
         buttonName.setTitle(buttonTitle, for: .normal)
         buttonName.layer.cornerRadius = 10
@@ -83,15 +108,46 @@ class ViewController: UIViewController {
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         
+        let text = userTextField.text
+        
+        switch text {
+        case newText1.rawValue:
+            descriptionLabel.text = newText1.description
+        case newText2.rawValue:
+            descriptionLabel.text = newText2.description
+        case newText3.rawValue:
+            descriptionLabel.text = newText3.description
+        case newText4.rawValue:
+            descriptionLabel.text = newText4.description
+        case newText5.rawValue:
+            descriptionLabel.text = newText5.description
+        default:
+            print("저도 몰러유😂")
+        }
         
     }
     
     @IBAction func returnKeyClicked(_ sender: UITextField) {
-        
-        
-        
+
+        let text = userTextField.text
+
+        switch text {
+        case newText1.rawValue:
+            descriptionLabel.text = newText1.description
+        case newText2.rawValue:
+            descriptionLabel.text = newText2.description
+        case newText3.rawValue:
+            descriptionLabel.text = newText3.description
+        case newText4.rawValue:
+            descriptionLabel.text = newText4.description
+        case newText5.rawValue:
+            descriptionLabel.text = newText5.description
+        default:
+            print("저도 몰러유😂")
+        }
+
     }
     
-    
 }
+
 
